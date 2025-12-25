@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json.schemastore.org/prettierrc",
+
+    "useTabs": false,
+    "tabWidth": 4,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "plugins": [
+        "prettier-plugin-astro",
+        "prettier-plugin-svelte",
+        "prettier-plugin-tailwindcss"
+    ],
+    "overrides": [
+        {
+            "files": "*.astro",
+            "options": {
+                "parser": "astro"
+            }
+        },
+        {
+            "files": "*.svelte",
+            "options": {
+                "parser": "svelte"
+            }
+        },
+        {
+            "files": ["*.html", "*.json"],
+            "options": {
+                "tabWidth": 2
+            }
+        }
+    ]
+}
