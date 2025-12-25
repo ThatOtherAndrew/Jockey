@@ -60,13 +60,14 @@
     }
 </script>
 
-<div>
+<div class="rounded-xl bg-gray-700 p-5">
     <VinylRecord {controller} bind:speed img="https://picsum.photos/200" />
 
-    <div class="my-3">
-        <div class="mb-2 flex gap-2">
+    <div class="mt-10 flex flex-col gap-2">
+        <!-- Sample search -->
+        <div class="flex gap-2">
             <input
-                class="flex-1 rounded border-3 px-4 py-2"
+                class="flex-1 rounded border-3 border-gray-300 px-4 py-2 text-white"
                 type="search"
                 list="samples"
                 placeholder="Search for a sample..."
@@ -79,8 +80,10 @@
                 }}>Search</button
             >
         </div>
+
+        <!-- Sample select -->
         <select
-            class="w-full rounded border-3 px-4 py-2"
+            class="w-full rounded border-3 border-gray-300 px-4 py-2 text-white"
             bind:value={sampleUrl}
         >
             {#if searchPromise}
@@ -100,28 +103,29 @@
                 <option value="" disabled selected>Select a sample...</option>
             {/if}
         </select>
-    </div>
 
-    <div class="flex gap-2">
-        <input
-            class="flex-1"
-            type="range"
-            min="-5"
-            max="5"
-            step="0.00000000001"
-            defaultvalue="0"
-            bind:value={speed}
-            oninput={() => controller.resumePlayback()}
-        />
-        <input
-            class="w-25 shrink-0 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
-            type="number"
-            min="-5"
-            max="5"
-            step="0.01"
-            defaultvalue="0"
-            bind:value={speed}
-            oninput={() => controller.resumePlayback()}
-        />
+        <!-- Speed control -->
+        <div class="flex gap-2">
+            <input
+                class="flex-1"
+                type="range"
+                min="-5"
+                max="5"
+                step="0.00000000001"
+                defaultvalue="0"
+                bind:value={speed}
+                oninput={() => controller.resumePlayback()}
+            />
+            <input
+                class="w-25 shrink-0 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+                type="number"
+                min="-5"
+                max="5"
+                step="0.01"
+                defaultvalue="0"
+                bind:value={speed}
+                oninput={() => controller.resumePlayback()}
+            />
+        </div>
     </div>
 </div>
