@@ -9,12 +9,21 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.16.6"
+    "@astrojs/svelte": "^7.2.4",
+    "@tailwindcss/vite": "^4.1.18",
+    "astro": "^5.16.6",
+    "svelte": "^5.46.1",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3",
+    "virtual-vinyl": "github:ThatOtherAndrew/VirtualVinyl"
   },
   "devDependencies": {
     "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-svelte": "^3.4.1",
     "prettier-plugin-tailwindcss": "^0.7.2"
-  }
+  },
+  "trustedDependencies": [
+    "virtual-vinyl"
+  ]
 }

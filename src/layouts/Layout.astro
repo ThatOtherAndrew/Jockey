@@ -1,0 +1,36 @@
+---
+import '../styles/global.css';
+
+import { site } from 'astro:config/client';
+
+const title = 'Jockey';
+const description = '*record scratch sound effect*';
+// const socialImageUrl = new URL('/TODO.png', site);
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>{title}</title>
+
+        <!-- Open Graph tags -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:url" content={site} />
+        <!-- <meta property="og:image" content={socialImageUrl} /> -->
+        <meta property="og:description" content={description} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <!-- <meta name="twitter:image" content={socialImageUrl} /> -->
+
+        <!-- Favicon links -->
+        <!-- TODO -->
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>
