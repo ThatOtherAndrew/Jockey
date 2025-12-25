@@ -14,12 +14,16 @@
     let searchSample = $state('');
     let searchPromise: Promise<Sample[]> | undefined = $state();
     let sampleUrl = $state('');
+    let recordImage = $state(
+        `https://picsum.photos/200?random=${Math.random()}`,
+    );
 
     const controller = new PlaybackController();
 
     $effect(() => {
         if (sampleUrl) {
             controller.loadFromUrl(sampleUrl, true);
+            recordImage = `https://picsum.photos/200?random=${Math.random()}`;
         }
     });
 
@@ -61,7 +65,7 @@
 </script>
 
 <div class="rounded-xl bg-gray-800 p-5">
-    <VinylRecord {controller} bind:speed img="https://picsum.photos/200" />
+    <VinylRecord {controller} bind:speed img={recordImage} />
 
     <div class="mt-10 flex flex-col gap-2">
         <!-- Sample search -->
