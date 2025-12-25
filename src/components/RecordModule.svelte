@@ -60,7 +60,7 @@
     }
 </script>
 
-<div class="rounded-xl bg-gray-700 p-5">
+<div class="rounded-xl bg-gray-800 p-5">
     <VinylRecord {controller} bind:speed img="https://picsum.photos/200" />
 
     <div class="mt-10 flex flex-col gap-2">

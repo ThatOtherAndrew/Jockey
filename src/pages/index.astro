@@ -5,5 +5,10 @@ import RecordModule from '../components/RecordModule.svelte';
 ---
 
 <Layout>
-    <RecordModule client:load />
+    <div
+        class="grid min-h-dvh grid-cols-[repeat(auto-fit,minmax(25rem,40rem))] place-content-center gap-5 bg-gray-950 p-5"
+    >
+        <RecordModule client:load />
+        <RecordModule client:load />
+    </div>
 </Layout>
