@@ -45,5 +45,12 @@ const socialImageUrl = new URL('/Jockey/favicon-96x96.png', baseUrl);
     </head>
     <body>
         <slot />
+
+        <!-- 100% privacy-first analytics -->
+        <script
+            is:inline
+            data-collect-dnt="true"
+            async
+            src="https://sa-api.thatother.dev/latest.js"></script>
     </body>
 </html>
