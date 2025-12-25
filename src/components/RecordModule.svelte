@@ -25,7 +25,7 @@
 
     async function searchFreesound(
         query: string,
-        limit = 5,
+        limit = 100,
     ): Promise<Sample[]> {
         const fields = 'id,name,previews,duration';
         const baseUrl = 'https://freesound.org/apiv2/search/text/';
@@ -72,6 +72,11 @@
                 list="samples"
                 placeholder="Search for a sample..."
                 bind:value={searchSample}
+                onkeydown={(e) => {
+                    if (e.key === 'Enter') {
+                        searchPromise = searchFreesound(searchSample);
+                    }
+                }}
             />
             <button
                 class="w-25 shrink-0 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
@@ -83,7 +88,7 @@
 
         <!-- Sample select -->
         <select
-            class="w-full rounded border-3 border-gray-300 px-4 py-2 text-white"
+            class="w-full rounded border-3 border-gray-300 bg-gray-800 px-4 py-2 text-white"
             bind:value={sampleUrl}
         >
             {#if searchPromise}
