@@ -1,11 +1,12 @@
 ---
 import '../styles/global.css';
 
-import { site } from 'astro:config/client';
+import { base, site } from 'astro:config/client';
 
 const title = 'Jockey';
 const description = '*record scratch sound effect*';
-const socialImageUrl = new URL('/Jockey/favicon-96x96.png', site);
+const baseUrl = new URL(base, site);
+const socialImageUrl = new URL('/Jockey/favicon-96x96.png', baseUrl);
 ---
 
 <!doctype html>
@@ -18,7 +19,7 @@ const socialImageUrl = new URL('/Jockey/favicon-96x96.png', site);
         <!-- Open Graph tags -->
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
-        <meta property="og:url" content={site} />
+        <meta property="og:url" content={baseUrl} />
         <meta property="og:image" content={socialImageUrl} />
         <meta property="og:description" content={description} />
 
@@ -30,15 +31,15 @@ const socialImageUrl = new URL('/Jockey/favicon-96x96.png', site);
         <link
             rel="icon"
             type="image/png"
-            href="/favicon-96x96.png"
+            href="/Jockey/favicon-96x96.png"
             sizes="96x96"
         />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="icon" type="image/svg+xml" href="/Jockey/favicon.svg" />
+        <link rel="shortcut icon" href="/Jockey/favicon.ico" />
         <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="/apple-touch-icon.png"
+            href="/Jockey/apple-touch-icon.png"
         />
         <meta name="apple-mobile-web-app-title" content={title} />
     </head>
