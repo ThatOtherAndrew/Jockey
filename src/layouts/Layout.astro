@@ -5,7 +5,7 @@ import { site } from 'astro:config/client';
 
 const title = 'Jockey';
 const description = '*record scratch sound effect*';
-// const socialImageUrl = new URL('/TODO.png', site);
+const socialImageUrl = new URL('/Jockey/favicon-96x96.png', site);
 ---
 
 <!doctype html>
@@ -19,13 +19,12 @@ const description = '*record scratch sound effect*';
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:url" content={site} />
-        <!-- <meta property="og:image" content={socialImageUrl} /> -->
+        <meta property="og:image" content={socialImageUrl} />
         <meta property="og:description" content={description} />
 
-        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <!-- <meta name="twitter:image" content={socialImageUrl} /> -->
+        <meta name="twitter:image" content={socialImageUrl} />
 
         <!-- Favicon links -->
         <link

@@ -7,6 +7,9 @@ import svelte from '@astrojs/svelte';
 
 // https://astro.build/config
 export default defineConfig({
+    site: 'https://thatotherandrew.github.io',
+    base: '/Jockey',
+
     vite: {
         plugins: [tailwindcss()],
     },
