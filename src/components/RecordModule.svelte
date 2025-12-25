@@ -12,7 +12,24 @@
     });
 </script>
 
-<div class="bg-red-500">
+<div>
     <VinylRecord {controller} bind:speed img="https://picsum.photos/200" />
-    Speed: <input type="number" bind:value={speed} />
+    <input
+        type="range"
+        min="-5"
+        max="5"
+        step="0.00000000001"
+        defaultvalue="0"
+        bind:value={speed}
+        oninput={() => controller.resumePlayback()}
+    />
+    <input
+        type="number"
+        min="-5"
+        max="5"
+        step="0.01"
+        defaultvalue="0"
+        bind:value={speed}
+        oninput={() => controller.resumePlayback()}
+    />
 </div>
